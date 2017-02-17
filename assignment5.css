@@ -1,0 +1,9 @@
+#parent{
+      padding: 5%;
+      margin: 5%;
+      background-color: #00BCD4;
+      }
+.alert-success {
+    color: #3c763d;
+    background-color: #fff;
+    border-color: #fff;

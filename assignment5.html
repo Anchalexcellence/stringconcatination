@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html ng-app="textboxApp">
+   <head>
+      <title>Assignment Ang</title>
+      <!-- bootstrap -->
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+      <!-- angular -->
+      <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+      <!-- Js -->
+      <script type="text/javascript" src="textbox.js"></script>
+      <link rel="stylesheet" type="text/css" href="assignment5.css">
+     
+   </head>
+  
+   <body ng-controller="textboxCtrl">
+      <div class="row">
+         <div id="parent" class="col-sm-4">
+            <form class="col-sm-12">
+               <div class="form-group">
+                  <label for="First Value">Enter First Value</label>
+                  <input type="text" class="form-control" ng-model="value1" ng-keydown="keyevent($event,counter=0)" ng-mousedown="delete1()">
+               </div>
+               <div class="form-group">
+                  <label for="Second Value">Enter Second Value</label>
+                  <input type="text" class="form-control" ng-model="value2" ng-keypress="checkValue2($event)" ng-keydown="keyevent($event,value=0)" ng-mousedown="delete2()">
+               </div>
+               <button class="btn btn-default" ng-click="calculation()">Add</button>
+               <button class="btn btn-default" ng-click="remove()">Clear</button>
+            </form>
+            <div class="col-sm-12">
+               <br/>
+               <div ng-show="firstfield.alert" class="alert alert-danger"> You have not entered any value!!</div>
+               <div ng-show="validation.alert"  class="alert alert-danger">Only String Value allowed!!</div>
+               <div ng-show="validation2.alert" class="alert alert-danger">Only Integer value allowed!!</div>
+               <div ng-show="validation1.alert" class="alert alert-danger">Enter value in first field first</div>
+               <label for="Result">Result will be displayed below:</label><br>
+               <div class="alert alert-success">{{result}}</div>
+            </div>
+            <br>
+            <br>
+         </div>
+      </div>
+   </body>
+</html>
